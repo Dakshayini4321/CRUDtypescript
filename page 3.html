@@ -1,0 +1,64 @@
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>page 3</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css">
+   
+    <style>
+        .calculator {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .btn {
+            width: 75px;
+            height: 75px;
+            font-size: 24px;
+        }
+        .result-box {
+            border: 3px solid rgb(7, 7, 7);
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 calculator">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>First Number</h3>
+                <input type="text" id="firstNumber" class="form-control mb-2" placeholder="First Number">
+                <h3>Second Number:</h3>
+                <input type="text" id="secondNumber" class="form-control mb-2" placeholder="Second Number">
+                <h3>Result</h3><h6 class="result-box" id="result">0</h6>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-primary" onclick="abc">1</button>
+                <button class="btn btn-primary" onclick="abc">2</button>
+                <button class="btn btn-primary" onclick="abc">3</button>
+                
+                
+                <button class="btn btn-primary" onclick="abc">4</button>
+                <button class="btn btn-primary" onclick="abc">5</button>
+                <button class="btn btn-primary" onclick="abc">6</button>
+               
+                
+                <button class="btn btn-primary" onclick="abc">7</button>
+                <button class="btn btn-primary" onclick="abc">8</button>
+                <button class="btn btn-primary" onclick="abc">9</button>
+                
+                
+                <button class="btn btn-primary" onclick="abc">0</button>
+                <button class="btn btn-info" onclick="abc">+</button>
+                <button class="btn btn-info" onclick="abc">-</button>
+                <button class="btn btn-success" onclick="abc">=</button>
+                <button class="btn btn-danger" onclick="abc">C</button>
+                <button class="btn btn-info" onclick="abc">/</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

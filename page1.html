@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Page1</title>
+       
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+       
+        <style>
+            body {
+               padding: 5%;
+                height: 100vh;
+                margin: 0;
+                width: 40%;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div >
+            <h2 class="text-center">User Application</h2>
+            <form id="loginform">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter username" pattern="[A-Za-z0-9]{1,}" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter Password" minlength="4" maxlength="12" required>
+                
+                <div id="passworderror" class="text-danger"></div>
+                </div>
+                <p>Your password is between 4 and 12 characters</p>
+                <div class="form-group">
+                    <button id="submit" type="submit" class="btn btn-primary btn-block">Login</button>
+                </div>
+                <div class="form-group form-check text-center">
+                    <input type="checkbox" class="form-check-input " id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+            </form>
+            <p class="text-center">
+                <a href="abc" class="font-weight-bold text-decoration-none">Create New Account</a> 
+                <a href="abc">Sign In</a>
+            </p>
+        </div>
+    
+       
+       
+    </body>
+    </html>
