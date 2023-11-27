@@ -49,38 +49,55 @@
     <div class="container mt-5 calculator">
         <div class="row">
             <div class="col-md-6">
-                <h3>First Number</h3>
+                <h3>Numbers</h3>
                 <input type="text" id="firstNumber" class="form-control mb-2" placeholder="First Number">
-                <h3>Second Number:</h3>
-                <input type="text" id="secondNumber" class="form-control mb-2" placeholder="Second Number">
+               
                 <h3>Result</h3><h6 class="result-box" id="result">0</h6>
             </div>
             <div class="col-md-6">
-                <button class="btn btn-primary" onclick="abc">1</button>
-                <button class="btn btn-primary" onclick="abc">2</button>
-                <button class="btn btn-primary" onclick="abc">3</button>
+                <button class="btn btn-primary" onclick="appendToInput('1')">1</button>
+                <button class="btn btn-primary" onclick="appendToInput('2')">2</button>
+                <button class="btn btn-primary" onclick="appendToInput('3')">3</button>
                 
                 
-                <button class="btn btn-primary" onclick="abc">4</button>
-                <button class="btn btn-primary" onclick="abc">5</button>
-                <button class="btn btn-primary" onclick="abc">6</button>
+                <button class="btn btn-primary" onclick="appendToInput('4')">4</button>
+                <button class="btn btn-primary" onclick="appendToInput('5')">5</button>
+                <button class="btn btn-primary" onclick="appendToInput('6')">6</button>
                
                 
-                <button class="btn btn-primary" onclick="abc">7</button>
-                <button class="btn btn-primary" onclick="abc">8</button>
-                <button class="btn btn-primary" onclick="abc">9</button>
+                <button class="btn btn-primary" onclick="appendToInput('7')">7</button>
+                <button class="btn btn-primary" onclick="appendToInput('8')">8</button>
+                <button class="btn btn-primary" onclick="appendToInput('9')">9</button>
                 
                 
-                <button class="btn btn-primary" onclick="abc">0</button>
-                <button class="btn btn-info" onclick="abc">+</button>
-                <button class="btn btn-info" onclick="abc">-</button>
-                <button class="btn btn-success" onclick="abc">=</button>
-                <button class="btn btn-danger" onclick="abc">C</button>
-                <button class="btn btn-info" onclick="abc">/</button>
+                <button class="btn btn-primary" onclick="appendToInput('0')">0</button>
+                <button class="btn btn-info" onclick="appendToInput('+')">+</button>
+                <button class="btn btn-info" onclick="appendToInput('-')">-</button>
+                <button class="btn btn-info" onclick="appendToInput('*')">*</button>
+
+                <button class="btn btn-success" onclick="calculate()">=</button>
+                <button class="btn btn-danger" onclick="clearInput()">C</button>
+                <button class="btn btn-info" onclick="appendToInput('/')">/</button>
             </div>
         </div>
     </div>
+    <script>
+       
+       function appendToInput(value) {
+        document.getElementById("firstNumber").value += value;
+    }
 
+    function calculate() {
+        var input = document.getElementById("firstNumber").value;
+        var result = eval(input);
+        document.getElementById("result").innerText = result;
+    }
+
+    function clearInput() {
+        document.getElementById("firstNumber").value = "";
+        document.getElementById("result").innerText = "0";
+    }
+</script>
 
 </body>
 </html>
