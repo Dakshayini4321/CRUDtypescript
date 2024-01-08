@@ -1,0 +1,82 @@
+<html>
+<head>
+ 
+  <style>
+   
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+    input {
+      margin-right: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div>
+    <input type="text" id="dataInput">
+    <button onclick="addItem()">Add</button>
+  </div>
+
+  <h2>Lists</h2>
+  <table id="dataList">
+    <tr>
+      <th>Data</th>
+      <th>Actions</th>
+    </tr>
+  </table>
+
+  <script>
+    
+    function addItem() {
+      var inputElement = document.getElementById("dataInput");
+      var dataList = document.getElementById("dataList");
+
+         var inputValue = inputElement.value;
+
+      if (inputValue.trim() !== "") {
+        var newRow = dataList.insertRow(dataList.rows.length);
+
+    var dataCell = newRow.insertCell(0);
+        dataCell.innerHTML = inputValue;
+
+     
+    var actionsCell = newRow.insertCell(1);
+        actionsCell.innerHTML = '<button onclick="updateItem(this)">Update</button> <button onclick="deleteItem(this)">Delete</button>';
+
+        
+        inputElement.value = "";
+      }
+    }
+
+   
+function updateItem(button) {
+      var row = button.parentNode.parentNode;
+      var dataCell = row.cells[0];
+      var newData = prompt("Update data:", dataCell.innerHTML);
+
+    
+      if (newData !== null) {
+        dataCell.innerHTML = newData;
+      }
+    }
+
+
+function deleteItem(button) {
+      var row = button.parentNode.parentNode;
+      row.parentNode.removeChild(row);
+    }
+  </script>
+
+</body>
+</html>

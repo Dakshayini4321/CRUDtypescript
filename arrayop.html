@@ -1,0 +1,132 @@
+<html >
+<head>
+   
+    <style>
+        #output-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+   
+</head>
+<body>
+
+    <h2>Array with Properties</h2>
+
+    <label for="array-input">Enter Array:</label>
+    <input type="text" id="array-input" >
+    <button onclick="parseArray()">Array View</button>
+
+    
+
+    <div id="output-box"></div>
+
+    <button onclick="getArrayLength()">Array Length</button>
+    <button onclick="arrayToString()">Array toString</button>
+    <button onclick="arrayPop()">Array pop</button>
+    <button onclick="addItem()">Array push</button>
+    <button onclick="arrayShift()">Array shift</button>
+    <br>
+        <button onclick="addFrontItem()">Array unshift</button>
+    <button onclick="joinArray()">Array join</button>
+    <button onclick="deleteItem()">Array delete</button>
+    <button onclick="concatArray()">Array concat</button>
+    <br>
+    <button onclick="flatArray()">Array flat</button>
+    <button onclick="spliceArray()">Array splice</button>
+    <button onclick="sliceArray()">Array slice</button>
+
+    <script>
+        let myArray = [];
+
+        function parseArray() {
+            const input = document.getElementById('array-input').value;
+            myArray = input.split(',').map(item => item.trim());
+            updateOutput();
+        }
+
+    function arrayView() {
+            updateOutput();
+        }
+
+ function getArrayLength() {
+            alert(`Array Length: ${myArray.length}`);
+        }
+
+        function arrayToString() {
+            alert(`Array toString: ${myArray.toString()}`);
+        }
+
+        function arrayPop() {
+            const poppedItem = myArray.pop();
+            updateOutput(`Pop item: ${poppedItem}`);
+        }
+
+    function addItem() {
+            const newItem = prompt('new:');
+            myArray.push(newItem);
+            updateOutput(` item that you want to add: ${newItem}`);
+        }
+
+function arrayShift() {
+            const shiftedItem = myArray.shift();
+            updateOutput(`Shifted one: ${shiftedItem}`);
+        }
+
+    function addFrontItem() {
+            const newItem = prompt('Enter new item:');
+            myArray.unshift(newItem);
+            updateOutput(`: ${newItem}`);
+        }
+
+        function joinArray() {
+            const separator = prompt('join:');
+            const joinedArray = myArray.join(separator);
+            updateOutput(`Joined : ${joinedArray}`);
+        }
+
+        function deleteItem() {
+            const index = prompt('to delete:');
+            delete myArray[index];
+            updateOutput(`Deleted : ${index}`);
+        }
+
+        function concatArray() {
+            const input = prompt('Enter');
+            const newArray = input.split(',').map(item => item.trim());
+            myArray = myArray.concat(newArray);
+            updateOutput(`new array: ${newArray.join(', ')}`);
+        }
+
+        function flatArray() {
+            const depth = prompt('Enter:');
+            myArray = myArray.flat(parseInt(depth));
+            updateOutput(`Array new ${depth}`);
+        }
+
+        function spliceArray() {
+            const start = prompt('start :');
+    const deleteCount = prompt('number of:');
+    const itemsToAdd = prompt(' to add:');
+            const itemsToAddArray = itemsToAdd.split(',').map(item => item.trim());
+            const removedItems = myArray.splice(parseInt(start), parseInt(deleteCount), ...itemsToAddArray);
+            updateOutput(`Spliced array, removed: ${removedItems.join(', ')}, added: ${itemsToAddArray.join(', ')}`);
+        }
+
+        function sliceArray() {
+            const start = prompt('start :');
+            const end = prompt(' end :');
+            const slicedArray = myArray.slice(parseInt(start), parseInt(end));
+            updateOutput(`Sliced array: ${slicedArray.join(', ')}`);
+        }
+
+ function updateOutput(message) {
+    const outputBox = document.getElementById('output-box');
+            myArray = myArray.filter(Boolean); 
+        outputBox.innerText = `Array: ${myArray.join(', ')}\n${message || ''}`;
+        }
+    </script>
+
+</body>
+</html>

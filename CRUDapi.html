@@ -1,0 +1,95 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <button class="btn btn-primary mt-4" onclick="addDataFromAPI()">API Add</button>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+     <th>Name</th>
+     <th>Username</th>
+     <th>Email</th>
+   <th>Company</th>
+    <th>State</th>
+    <th>Phone</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="apiAddTableBody"></tbody>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            addDataFromAPI();
+            document.querySelector(".btn-primary").addEventListener("click", addDataFromAPI);
+        });
+
+        function addDataFromAPI() {
+            console.log("Fetching data from API...");
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())
+                .then(data => displayDataInTable(data))
+                .catch(error => console.error('Error fetching users:', error));
+        }
+
+        function displayDataInTable(data) {
+            var tableBody = document.getElementById("apiAddTableBody");
+            tableBody.innerHTML = "";
+
+    data.forEach(function(user) {
+                var row = tableBody.insertRow();
+         for (var i = 0; i < 8; i++) {
+                    var cell = row.insertCell(i);
+                    var cellData = i === 3 ? user.company.name : i === 4 ? user.address.state : user[Object.keys(user)[i]];
+                    cell.innerHTML = cellData;
+                }
+
+                var cell9 = row.insertCell(8);
+
+    var updateButton = createButton("Update", "btn-warning", function() {
+                    updateUser(user.id);
+                });
+                cell9.appendChild(updateButton);
+
+         var deleteButton = createButton("Delete", "btn-danger", function() {
+                    deleteUser(user.id);
+                });
+                cell9.appendChild(deleteButton);
+            });
+        }
+
+        function updateUser(userId) {
+            var newName = prompt("Enter new name:");
+            var newUsername = prompt("Enter new username:");
+
+            if (newName !== null && newUsername !== null) {
+                console.log('Updating');
+                refreshTable();
+            }
+        }
+
+        function deleteUser(userId) {
+var confirmed = confirm ("Delete?");
+            if (confirmed) {
+                console.log('Delet');
+                refreshTable();
+            }
+        }
+
+        function refreshTable() {
+            addDataFromAPI(); 
+        }
+
+        function createButton(text, className, clickHandler) {
+            var button = document.createElement("button");
+            button.className = "btn " + className + " btn-sm mr-1";
+            button.innerHTML = text;
+            button.addEventListener("click", clickHandler);
+            return button;
+        }
+    </script>
+</body>
+</html>

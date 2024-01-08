@@ -9,8 +9,8 @@
             padding: 7%;
             margin: 0;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+        justify-content: space-between;
+        align-items: center;
             flex-wrap: wrap;
         }
 
@@ -131,9 +131,41 @@
     </div>
 
     <div class="center-button">
-        <button id="signInButton" class="btn btn-primary" onclick="manageUser()">Sign In</button>
+        <button id="signInButton" class="btn btn-primary" onclick="file:///C:/Users/user/Desktop/Web/html/as3/angular/template123/options.html.html">Sign In</button>
     </div>
 
-    
+    <script>
+        function manageUser() {
+        var firstName = document.getElementById("firstName").value;
+        var secondName = document.getElementById("secondName").value;
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var education = document.querySelector('input[name="education"]:checked').value;
+        var state = document.getElementById("state").value;
+        var mobileNumber = document.getElementById("mobileNumber").value;
+        var address = document.getElementById("address").value;
+        var gender = document.querySelector('input[name="gender"]:checked').value;
+
+        if (username && password && firstName && secondName && education && state && mobileNumber && address && gender) {
+            var user = {
+                Name: { firstName: firstName, secondName: secondName }, 
+                Username: username,
+                Password: password,
+                Education: education,
+                State: state,
+                MobileNumber: mobileNumber,
+                Address: address,
+                Gender: gender
+            };
+
+            var storedData = localStorage.getItem('userData');
+            var userData = storedData ? JSON.parse(storedData) : [];
+            userData.push(user);
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            window.location.href = 'file:///C:/Users/user/Desktop/Web/html/as3/angular/template123/CRUDarray.html';
+        }
+    }
+    </script>
 </body>
 </html>
