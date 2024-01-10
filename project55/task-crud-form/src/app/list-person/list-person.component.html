@@ -1,0 +1,22 @@
+<table>
+    <thead>
+      <tr>
+        <th>Number</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of persons">
+        <td>{{ person.number }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td><button (click)="editPerson(person.id)">Edit</button></td>
+        <td><button (click)="deletePerson(person.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <button (click)="createNewPerson()">Create New</button>

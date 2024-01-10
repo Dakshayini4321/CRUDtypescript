@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "project50-b7848": {
+      "hosting": {
+        "project100": [
+          "project50-b7848"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "project50-b7848"
+  }
+}

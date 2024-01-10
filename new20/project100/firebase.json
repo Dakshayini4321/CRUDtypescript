@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "project100",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}
