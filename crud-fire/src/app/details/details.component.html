@@ -1,0 +1,14 @@
+<div class="details-container">
+    <h2>Item Details</h2>
+  
+    <div *ngIf="item; else noItem">
+      <p><strong>Name:</strong> {{ item.name }}</p>
+      <p><strong>Age:</strong> {{ item.age }}</p>
+    </div>
+  
+    <ng-template #noItem>
+      <p>No item found.</p>
+    </ng-template>
+  
+    <button (click)="goToList()">Back to List</button>
+  </div>
