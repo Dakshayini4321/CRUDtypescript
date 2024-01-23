@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "crud",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}

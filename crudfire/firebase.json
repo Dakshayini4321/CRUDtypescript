@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "crudfire",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}

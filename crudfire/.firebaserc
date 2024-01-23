@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crudfire-d4ead": {
+      "hosting": {
+        "crudfire": [
+          "crudfire-d4ead"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crudfire-d4ead"
+  }
+}

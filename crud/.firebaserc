@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crud-fe0f5": {
+      "hosting": {
+        "crud": [
+          "crud-fe0f5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crud-fe0f5"
+  }
+}
