@@ -1,0 +1,148 @@
+
+<form (ngSubmit)="onSubmit()" #userForm="ngForm" novalidate>
+
+    
+    <div>
+      <label for="image">Image</label>
+      <input type="file" id="image" name="image" [(ngModel)]="data.image" />
+    </div>
+  
+    <div>
+      <label for="first_name">First Name*</label>
+      <input type="text" id="first_name" name="first_name" [(ngModel)]="data.first_name" required />
+      <div *ngIf="userForm.controls['first_name'].touched && userForm.controls['first_name'].errors?.['required']">
+        First Name is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="last_name">Last Name*</label>
+      <input type="text" id="last_name" name="last_name" [(ngModel)]="data.last_name" required />
+      <div *ngIf="userForm.controls['last_name'].touched && userForm.controls['last_name'].errors?.['required']">
+        Last Name is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="email">Email*</label>
+      <input type="email" id="email" name="email" [(ngModel)]="data.email" required />
+      <div *ngIf="userForm.controls['email'].touched && userForm.controls['email'].errors?.['required']">
+        Email is required.
+      </div>
+    </div>
+  
+    <div>
+      <label for="personal_email">Personal Email</label>
+      <input type="email" id="personal_email" name="personal_email" [(ngModel)]="data.personal_email" />
+    </div>
+  
+    <div>
+      <label for="mobile">Mobile</label>
+      <input type="text" id="mobile" name="mobile" [(ngModel)]="data.mobile" />
+    </div>
+  
+    <div>
+      <label for="office_number">Office Number</label>
+      <input type="text" id="office_number" name="office_number" [(ngModel)]="data.office_number" />
+    </div>
+  
+    
+    <div>
+      <label for="organization_id">Organization ID*</label>
+      <input type="number" id="organization_id" name="organization_id" [(ngModel)]="data.organization_id" required />
+    </div>
+  
+    <div>
+      <label for="department_id">Department ID*</label>
+      <input type="number" id="department_id" name="department_id" [(ngModel)]="data.department_id" required />
+    </div>
+  
+    <div>
+      <label for="division_id">Division ID*</label>
+      <input type="number" id="division_id" name="division_id" [(ngModel)]="data.division_id" required />
+    </div>
+  
+    <div>
+      <label for="section_id">Section ID*</label>
+      <input type="number" id="section_id" name="section_id" [(ngModel)]="data.section_id" required />
+    </div>
+  
+    <div>
+      <label for="designation_id">Designation ID*</label>
+      <input type="number" id="designation_id" name="designation_id" [(ngModel)]="data.designation_id" required />
+    </div>
+  
+    <div>
+      <label for="pwd">Password*</label>
+      <input type="password" id="pwd" name="pwd" [(ngModel)]="data.pwd" required />
+    </div>
+  
+    <div>
+      <label for="pwd_confirm">Confirm Password*</label>
+      <input type="password" id="pwd_confirm" name="pwd_confirm" [(ngModel)]="data.pwd_confirm" required />
+      <div *ngIf="userForm.controls['pwd_confirm'].touched && userForm.controls['pwd_confirm'].errors?.['required']">
+        Confirm Password is required.
+      </div>
+    </div>
+  
+   
+    <div>
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" [(ngModel)]="data.address" />
+    </div>
+  
+   
+    <div>
+      <label for="relative_name">Relative Name</label>
+      <input type="text" id="relative_name" name="relative_name" [(ngModel)]="data.addresses.emergency.relative_name" />
+    </div>
+  
+   
+    <div>
+      <label for="is_auditor">Is Auditor?</label>
+      <input type="checkbox" id="is_auditor" name="is_auditor" [(ngModel)]="data.is_auditor" />
+    </div>
+  
+    <div>
+      <label for="is_top_user">Is Top User?</label>
+      <input type="checkbox" id="is_top_user" name="is_top_user" [(ngModel)]="data.is_top_user" />
+    </div>
+  
+    <div>
+      <label for="is_send_welcome">Is Send Welcome?</label>
+      <input type="checkbox" id="is_send_welcome" name="is_send_welcome" [(ngModel)]="data.is_send_welcome" />
+    </div>
+  
+   
+    <div>
+      <label for="date_of_birth">Date of Birth</label>
+      <input type="text" id="date_of_birth" name="date_of_birth" [(ngModel)]="data.date_of_birth" />
+    </div>
+  
+    <div>
+      <label for="national_insurance_number">National Insurance Number</label>
+      <input type="text" id="national_insurance_number" name="national_insurance_number" [(ngModel)]="data.national_insurance_number" />
+    </div>
+  
+    <div>
+      <label for="joining_date">Joining Date</label>
+      <input type="text" id="joining_date" name="joining_date" [(ngModel)]="data.joining_date" />
+    </div>
+  
+    <div>
+      <label for="leaving_date">Leaving Date</label>
+      <input type="text" id="leaving_date" name="leaving_date" [(ngModel)]="data.leaving_date" />
+    </div>
+  
+    <div>
+      <label for="is_license_active">Is License Active?</label>
+      <input type="number" id="is_license_active" name="is_license_active" [(ngModel)]="data.is_license_active" />
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  
+    
+   
+  
+  </form>
