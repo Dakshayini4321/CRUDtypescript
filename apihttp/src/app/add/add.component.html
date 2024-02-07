@@ -1,0 +1,82 @@
+<form id="addUserForm" (ngSubmit)="submitForm()" #userForm="ngForm">
+  
+    <div>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" [(ngModel)]="user.first_name" placeholder="Enter first name" required>
+        <div *ngIf="userForm.controls['first_name'].invalid && userForm.controls['first_name'].touched">
+            <span class="error-message">First name is required.</span>
+        </div>
+    </div>
+
+    <div>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" [(ngModel)]="user.last_name" placeholder="Enter last name" required>
+        <div *ngIf="userForm.controls['last_name'].invalid && userForm.controls['last_name'].touched">
+            <span class="error-message">Last name is required.</span>
+        </div>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="user.email" placeholder="Enter email" required>
+        <div *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">
+            <span class="error-message">Valid email is required.</span>
+        </div>
+    </div>
+
+   
+    <div>
+        <label for="address">Contact Address:</label>
+        <input type="text" id="address" name="address" [(ngModel)]="user.address" placeholder="Enter contact address">
+    </div>
+
+    <div>
+        <label for="emergency_contact">Emergency Contact:</label>
+        <input type="text" id="emergency_contact" name="emergency_contact" [(ngModel)]="user.emergency_contact" placeholder="Enter emergency contact">
+    </div>
+
+   
+    <div>
+        <label for="role_ids">Role IDs:</label>
+        <input type="text" id="role_ids" name="role_ids" [(ngModel)]="user.role_ids" placeholder="Enter role IDs">
+    </div>
+
+   
+    <div>
+        <label for="is_auditor">Is Auditor:</label>
+        <input type="checkbox" id="is_auditor" name="is_auditor" [(ngModel)]="user.is_auditor">
+    </div>
+
+    <div>
+        <label for="is_top_user">Is Top User:</label>
+        <input type="checkbox" id="is_top_user" name="is_top_user" [(ngModel)]="user.is_top_user">
+    </div>
+
+    <div>
+        <label for="is_send_welcome">Send Welcome:</label>
+        <input type="checkbox" id="is_send_welcome" name="is_send_welcome" [(ngModel)]="user.is_send_welcome">
+    </div>
+
+    
+    <div>
+        
+        <label for="pagination">Items per Page:</label>
+        <select id="pagination" name="pagination" [(ngModel)]="itemsPerPage">
+            <option value="15">15</option>
+           
+        </select>
+
+       
+        <button type="button" (click)="showToastr()">Show Toastr</button>
+
+        
+        <label for="label_placeholder">Label Placeholder:</label>
+        <input type="text" id="label_placeholder" name="label_placeholder" placeholder="Enter something">
+
+       
+        <div *ngIf="formError" class="error-message">{{ formError }}</div>
+    </div>
+
+   
+    <button type="submit">Submit</button>
+</form>

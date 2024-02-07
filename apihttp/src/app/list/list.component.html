@@ -1,0 +1,39 @@
+
+<div>
+  <h2>User List</h2>
+
+  <div>
+    <label for="filter">Filter:</label>
+    <input type="text" id="filter" name="filter" [(ngModel)]="filterText">
+
+    <button type="button" (click)="applyFilter()">Apply Filter</button>
+  </div>
+
+  <div *ngIf="paginatedUsers && paginatedUsers.length > 0; else noUsers">
+    <ul>
+      <li *ngFor="let user of paginatedUsers">
+        <div>
+          <strong>{{ user.first_name }} {{ user.last_name }}</strong> - {{ user.email }}
+        </div>
+        <div>
+          <span>Mobile: {{ user.mobile }}</span>
+          <span>Office Number: {{ user.office_number }}</span>
+        </div>
+        <div>
+          <span>Department: {{ user.department_name }}</span>
+          <span>Division: {{ user.division_name }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noUsers>
+    <p>No users found.</p>
+  </ng-template>
+
+  <div *ngIf="totalPages > 1">
+    <button [disabled]="currentPage === 1" (click)="changePage(currentPage - 1)">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button [disabled]="currentPage === totalPages" (click)="changePage(currentPage + 1)">Next</button>
+  </div>
+</div>

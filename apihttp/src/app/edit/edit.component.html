@@ -1,0 +1,19 @@
+<div>
+  <h2>Edit User</h2>
+  
+  <form (submit)="updateUser()">
+    <label for="sectionid">Section Id:</label>
+    <input type="text" id="sectionid" name="sectionid" [(ngModel)]="editedUser.section_id" required>
+    
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="editedUser.first_name" required>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="editedUser.last_name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="editedUser.email" required>
+
+    <button type="submit">Update User</button>
+  </form>
+</div>
