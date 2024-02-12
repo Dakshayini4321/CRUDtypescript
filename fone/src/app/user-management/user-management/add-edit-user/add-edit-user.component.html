@@ -1,0 +1,201 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="first_name" placeholder="Enter first name">
+      <div *ngIf="userForm.get('first_name')?.invalid && userForm.get('first_name')?.touched">
+        <span class="error-message">First name is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="last_name" placeholder="Enter last name">
+      <div *ngIf="userForm.get('last_name')?.invalid && userForm.get('last_name')?.touched">
+        <span class="error-message">Last name is required</span>
+      </div>
+    </div>
+    
+
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter email">
+      <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+        <span class="error-message">Valid email is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="personalEmail">Personal Email</label>
+      <input type="email" id="personalEmail" formControlName="personal_email" placeholder="Enter personal email">
+      <div *ngIf="userForm.get('personal_email')?.invalid && userForm.get('personal_email')?.touched">
+        <span class="error-message">Valid personal email is required</span>
+      </div>
+    </div>
+    
+    
+    <div>
+      <label for="mobile">Mobile</label>
+      <input type="text" id="mobile" formControlName="mobile" placeholder="Enter mobile number">
+      <div *ngIf="userForm.get('mobile')?.invalid && userForm.get('mobile')?.touched">
+        <span class="error-message">Valid mobile number is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="officeNumber">Office Number</label>
+      <input type="text" id="officeNumber" formControlName="office_number" placeholder="Enter office number">
+      <div *ngIf="userForm.get('office_number')?.invalid && userForm.get('office_number')?.touched">
+        <span class="error-message">Valid office number is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="organizationId">Organization ID</label>
+      <input type="text" id="organizationId" formControlName="organization_id" placeholder="Enter organization ID">
+      <div *ngIf="userForm.get('organization_id')?.invalid && userForm.get('organization_id')?.touched">
+        <span class="error-message">Organization ID is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="departmentId">Department ID</label>
+      <input type="text" id="departmentId" formControlName="department_id" placeholder="Enter department ID">
+      <div *ngIf="userForm.get('department_id')?.invalid && userForm.get('department_id')?.touched">
+        <span class="error-message">Department ID is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="divisionId">Division ID</label>
+      <input type="text" id="divisionId" formControlName="division_id" placeholder="Enter division ID">
+      <div *ngIf="userForm.get('division_id')?.invalid && userForm.get('division_id')?.touched">
+        <span class="error-message">Division ID is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="sectionId">Section ID</label>
+      <input type="text" id="sectionId" formControlName="section_id" placeholder="Enter section ID">
+      <div *ngIf="userForm.get('section_id')?.invalid && userForm.get('section_id')?.touched">
+        <span class="error-message">Section ID is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="designationId">Designation ID</label>
+      <input type="text" id="designationId" formControlName="designation_id" placeholder="Enter designation ID">
+      <div *ngIf="userForm.get('designation_id')?.invalid && userForm.get('designation_id')?.touched">
+        <span class="error-message">Designation ID is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="pwd">Password</label>
+      <input type="password" id="pwd" formControlName="pwd" placeholder="Enter password">
+      <div *ngIf="userForm.get('pwd')?.invalid && userForm.get('pwd')?.touched">
+        <span class="error-message">Password is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="pwdConfirm">Confirm Password</label>
+      <input type="password" id="pwdConfirm" formControlName="pwd_confirm" placeholder="Confirm password">
+      <div *ngIf="userForm.get('pwd_confirm')?.invalid && userForm.get('pwd_confirm')?.touched">
+        <span class="error-message">Please confirm your password</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="address">Address</label>
+      <input type="text" id="address" formControlName="address" placeholder="Enter address">
+      <div *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched">
+        <span class="error-message">Address is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="street">Street</label>
+      <input type="text" id="street" formControlName="street" placeholder="Enter street">
+      <div *ngIf="userForm.get('street')?.invalid &&     userForm.get('street')?.touched">
+        <span class="error-message">Street is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="state">State</label>
+      <input type="text" id="state" formControlName="state" placeholder="Enter state">
+      <div *ngIf="userForm.get('state')?.invalid && userForm.get('state')?.touched">
+        <span class="error-message">State is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="city">City</label>
+      <input type="text" id="city" formControlName="city" placeholder="Enter city">
+      <div *ngIf="userForm.get('city')?.invalid && userForm.get('city')?.touched">
+        <span class="error-message">City is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="countryId">Country ID</label>
+      <input type="text" id="countryId" formControlName="country_id" placeholder="Enter country ID">
+      <div *ngIf="userForm.get('country_id')?.invalid && userForm.get('country_id')?.touched">
+        <span class="error-message">Country ID is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="zip">ZIP</label>
+      <input type="text" id="zip" formControlName="zip" placeholder="Enter ZIP">
+      <div *ngIf="userForm.get('zip')?.invalid && userForm.get('zip')?.touched">
+        <span class="error-message">ZIP is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="contact">Contact</label>
+      <input type="text" id="contact" formControlName="contact" placeholder="Enter contact">
+      <div *ngIf="userForm.get('contact')?.invalid && userForm.get('contact')?.touched">
+        <span class="error-message">Contact is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="relativeName">Relative Name</label>
+      <input type="text" id="relativeName" formControlName="relative_name" placeholder="Enter relative name">
+      <div *ngIf="userForm.get('relative_name')?.invalid && userForm.get('relative_name')?.touched">
+        <span class="error-message">Relative name is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="relationship">Relationship</label>
+      <input type="text" id="relationship" formControlName="relationship" placeholder="Enter relationship">
+      <div *ngIf="userForm.get('relationship')?.invalid && userForm.get('relationship')?.touched">
+        <span class="error-message">Relationship is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="relativeMobile">Relative Mobile</label>
+      <input type="text" id="relativeMobile" formControlName="relative_mobile" placeholder="Enter relative mobile">
+      <div *ngIf="userForm.get('relative_mobile')?.invalid && userForm.get('relative_mobile')?.touched">
+        <span class="error-message">Relative mobile is required</span>
+      </div>
+    </div>
+    
+    <div>
+      <label for="relativeAddress">Relative Address</label>
+      <input type="text" id="relativeAddress" formControlName="relative_address" placeholder="Enter relative address">
+      <div *ngIf="userForm.get('relative_address')?.invalid && userForm.get('relative_address')?.touched">
+        <span class="error-message">Relative address is required</span>
+      </div>
+    </div>
+    
+    
+    
+    <button type="submit">Save</button>
+  </form>
+  
+  <div *ngIf="toastMessage" class="toast-message">{{ toastMessage }}</div>

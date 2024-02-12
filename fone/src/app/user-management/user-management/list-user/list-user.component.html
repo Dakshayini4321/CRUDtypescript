@@ -1,0 +1,35 @@
+<div *ngIf="users.length > 0; else noUsers">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.first_name }} {{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button (click)="deleteUser(user.id)">Delete</button>
+            
+           
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pagination">
+      <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }}</span>
+      <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage * itemsPerPage >= users.length">Next</button>
+    </div>
+    
+  </div>
+  
+  <ng-template #noUsers>
+    <p>No users available.</p>
+  </ng-template>
